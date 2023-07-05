@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Board struct {
 	tokens []int
 }
@@ -57,8 +59,22 @@ func (b *Board) judge() string {
 	} else if sum_d2 == -3 {
 		return "x win"
 	}
-	return "other"
+	return "continue"
 }
 
 func main() {
+	i := 0
+	for i < 9 {
+		var x, y int
+		fmt.Scan(&x)
+		fmt.Scan(&y)
+		fmt.Println(x)
+		if i%2 == 0 {
+			b.put(x, y, "o")
+		} else if i%2 == 1 {
+			b.put(x, y, "x")
+		}
+		b.judge()
+		i++
+	}
 }
