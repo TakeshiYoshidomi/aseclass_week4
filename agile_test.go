@@ -8,7 +8,7 @@ func TestPutToken01(t *testing.T){
     }
     b.put(1,1, "o")
 
-    if b.get(1,1,) != "o"{
-        t.Error("......")
+    if b.get(1,1) != "o"{
+        t.Errorf("......")
     }
 }
