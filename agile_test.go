@@ -88,3 +88,27 @@ func TestPutToken07(t *testing.T) {
 		t.Errorf("Error")
 	}
 }
+func TestPutToken08(t *testing.T) {
+	b := &Board{
+		tokens: []int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+	}
+	b.put(0, 0, "x")
+	b.put(1, 1, "x")
+	b.put(2, 2, "x")
+
+	if b.judge() != "x win" {
+		t.Errorf("Error")
+	}
+}
+func TestPutToken09(t *testing.T) {
+	b := &Board{
+		tokens: []int{0, 0, 0, 0, 0, 0, 0, 0, 0},
+	}
+	b.put(0, 2, "x")
+	b.put(1, 1, "x")
+	b.put(2, 0, "x")
+
+	if b.judge() != "x win" {
+		t.Errorf("Error")
+	}
+}
